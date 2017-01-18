@@ -30,6 +30,6 @@
 	<bean class="com.mwb.web.framework.i18n.MessageSourceManager" />
 
 	<bean id="beanContextMonitor" 
-		class="com.mwb.web.framework.bean.context.monitor.BeanContextMonitor" />
+		class="com.mwb.web.framework.context.monitor.BeanContextMonitor" />
 
 </beans>

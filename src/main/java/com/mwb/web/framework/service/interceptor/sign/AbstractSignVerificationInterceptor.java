@@ -13,7 +13,7 @@ import java.util.Set;
 import java.util.TreeMap;
 
 public abstract class AbstractSignVerificationInterceptor extends AbstractBasePhaseInterceptor {
-	@Value("${service.internal.sign.secret.key}")
+	@Value("${service.internal.sign.secret.key:n6OD3HQSGtQlVeWjOXWOuTKyDdNGQ3mL}")
 	private String secretKey;
 	
 	public AbstractSignVerificationInterceptor(String phase) {
