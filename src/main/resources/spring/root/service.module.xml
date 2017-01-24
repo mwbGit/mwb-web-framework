@@ -68,7 +68,7 @@
 
 	<aop:config proxy-target-class="true">
 		<aop:aspect id="restAspect" ref="restServiceAspect" order="100">
-			<aop:pointcut id="restService" expression="execution(public * com.mwb..*.service..*.*Service.*(..)) || execution(public * com.mwb..*.webapp..*.*Service.*(..))" />
+			<aop:pointcut id="restService" expression="execution(public * com.mwb..*.service..*.*Service.*(..)) || execution(public * com.mwb.service..*.*Service.*(..))" />
 			<aop:around pointcut-ref="restService" method="doAround" />
 		</aop:aspect>
 	</aop:config>
