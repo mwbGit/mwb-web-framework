@@ -370,7 +370,7 @@ public class DateTimeUtility {
     }
     
     /**
-     * @param time - 传入一个时间
+     * @param date - 传入一个时间
      * @return - 将传入时间的日期改为明天后返回
      */
     public static Calendar getTomorrowTime(Date date) {
@@ -640,6 +640,20 @@ public class DateTimeUtility {
         return day;
     }
 
+    public static boolean isSameWeek(Date first, Date second) throws ParseException {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(first);
+        cal.add(Calendar.DATE, -1);
+
+        int week = cal.get(Calendar.WEEK_OF_YEAR);
+
+        cal.setTime(second);
+        cal.add(Calendar.DATE, -1);
+
+        int nowWeek = cal.get(Calendar.WEEK_OF_YEAR);
+
+        return week == nowWeek;
+    }
 
     /**
      * 判断今天是否是周末
@@ -1003,7 +1017,6 @@ public class DateTimeUtility {
 	}
 
 	/**
-	 * @param time
 	 * @param from
 	 * @param to
 	 * @return - 只比较小时和分钟，不比较其他字段
@@ -1015,7 +1028,6 @@ public class DateTimeUtility {
 	/**
 	 * date的小时分钟段是否在 [from, to] 范围内
 	 * 
-	 * @param time
 	 * @param from
 	 * @param to
 	 * @return - 只比较小时和分钟，不比较其他字段
